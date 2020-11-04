@@ -46,6 +46,9 @@ class Login extends Component {
                     <p className="forgot-password text-right">
                         Forgot <Link  to={"/sign-up"}>password?</Link>
                     </p>
+                    <p className="forgot-password text-right">
+                         <Link  to={"/sign-up"}>Register</Link>
+                    </p>
                 </form>
             </div>
         )
