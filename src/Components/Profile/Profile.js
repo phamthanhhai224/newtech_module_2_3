@@ -12,27 +12,10 @@ export default class SignUp extends Component {
         this.state = {
             user_token: token,
             isLogin: token.length > 1 ? true : false,
-            email: null,
-            image: null,
-            name :null ,
-
         }
     }
-    componentDidMount(){
-        this.profile()
-    }
 
-    profile = async ()=>{
-        let profile= await Service.getProfile()
-       if(! profile.error)  this.setState({
-           name: profile.user.name,
-           email: profile.user.email,
-           image: profile.user.image,
-        })
-       else this.setState({user:{}})
-       console.log(this.state)
-       
-    }
+
     logOut =async () => {
         await localStorage.removeItem('auth-token')
         this.setState({
@@ -57,7 +40,7 @@ export default class SignUp extends Component {
                             </li>
                         </ul>
                         <div className="tab-content" id="pills-tabContent">
-                            <Detail image={this.state.image} email={this.state.email}></Detail>
+                            <Detail></Detail>
                             <ChangePassword></ChangePassword>
                             <div className="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
                         </div>

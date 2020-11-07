@@ -10,6 +10,7 @@ class Detail extends Component {
             email: 'null',
             image: 'null',
             name :'null' ,
+            phoneNum : "default"
         }
     }
     handleFileChange= (e)=>{
@@ -18,8 +19,19 @@ class Detail extends Component {
         })
     }
     componentDidMount(){
+    this.profile()
     }
-
+    profile = async ()=>{
+        let profile= await Service.getProfile()
+       if(! profile.error)  this.setState({
+           name: profile.user.name,
+           email: profile.user.email,
+           image: profile.user.image,
+        })
+       else this.setState({user:{}})
+       console.log(this.state)
+       
+    }
     handleUpload= async(e)=>{
         let resBody = await Service.uploadFile(this.state.selectedFile)
         if(resBody.error) { console.log('loi upload file')}
@@ -52,7 +64,7 @@ class Detail extends Component {
                         </div>
                         <div className="form-group">
                             <label>Số điện thoại</label>
-                            <input type="number"  className="form-control" placeholder="phoneNum" name="phoneNum"  />
+                            <input type="number"  className="form-control" placeholder="phoneNum" name="phoneNum" value={this.state.phoneNum}  />
                         </div>
                     </div>
                 </div>
