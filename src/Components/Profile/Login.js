@@ -12,6 +12,7 @@ class Login extends Component {
       isLogin: token.length > 1 ? true : false,
       email: "",
       password: "",
+      loginError: false,
     };
   }
   handleSubmit = async (e) => {
@@ -21,8 +22,8 @@ class Login extends Component {
       if (!resBody.error) {
         await localStorage.setItem("auth-token", resBody.body.accessToken);
         this.setState({ isLogin: true });
-      } else console.log("login false");
-    } else console.log("k login dc ");
+      } else this.setState({ loginError: true });
+    } else this.setState({ loginError: true });
   };
 
   render() {
@@ -65,6 +66,14 @@ class Login extends Component {
               <Link to={"/sign-up"}> Register </Link>{" "}
             </p>{" "}
           </form>{" "}
+          {this.state.loginError ? (
+            <p>
+              Wrong password or your account not active, check your email for
+              activation
+            </p>
+          ) : (
+            ""
+          )}
         </div>
       );
     else return <Redirect to="/profile" />;
