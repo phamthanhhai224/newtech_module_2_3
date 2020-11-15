@@ -1,9 +1,7 @@
-import { Button } from "bootstrap";
 import React, { Component } from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import Detail from "../Detail";
 import ChangePassword from "./ChangePassword";
-import { Service } from "../../service/service";
 import Friend from "./Friend";
 
 export default class SignUp extends Component {
@@ -60,14 +58,14 @@ export default class SignUp extends Component {
               <li className="nav-item">
                 <a
                   className="nav-link"
-                  id="pills-contact-tab"
+                  id="pills-request-tab"
                   data-toggle="pill"
-                  href="#pills-contact"
+                  href="#pills-request"
                   role="tab"
-                  aria-controls="pills-contact"
+                  aria-controls="pills-request"
                   aria-selected="false"
                 >
-                  Contact
+                  Request
                 </a>
               </li>
               <li className="nav-item">
@@ -87,15 +85,15 @@ export default class SignUp extends Component {
             <div className="tab-content" id="pills-tabContent">
               <Detail></Detail>
               <ChangePassword></ChangePassword>
-              <Friend />
               <div
                 className="tab-pane fade"
-                id="pills-contact"
+                id="pills-request"
                 role="tabpanel"
-                aria-labelledby="pills-contact-tab"
+                aria-labelledby="pills-request-tab"
               >
-                ...
+                dsadas
               </div>
+              <Friend />
             </div>
           </div>
           <div className="btn btn-danger" onClick={this.logOut}>

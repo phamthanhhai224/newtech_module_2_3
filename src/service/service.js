@@ -108,7 +108,7 @@ async function getUserDetail(user_id) {
         res = await fetch(url, op)
         let body = await res.json()
         if (body.errorCode !== 200) return { error: true }
-        else return { error: false, user: body }
+        else return { error: false, user: body.user }
     } catch (error) {
         return { error: true }
     }
@@ -131,11 +131,37 @@ async function getFriends() {
         return { error: true }
     }
 }
+async function putUnfriend(user_id) {
+    let res
+    let op = {
+        method: "PUT",
+        body: JSON.stringify({
+            unfriend_user_id: user_id
+        }),
+        headers: {
+            'Content-Type': 'Application/json',
+            'auth-token': user_token
+        }
+    }
+    let url = API_CONST.PUT_UNFRIEND
+    try {
+        res = await fetch(url, op)
+        let body = await res.json()
+        if (body.errorCode === 200) {
+            return { error: false }
+        } else return { error: true }
+    } catch (error) {
+        return { error: true }
+    }
+}
+async function getRequestReceive(user_id) {}
 export const Service = {
     logIn,
     uploadFile,
     getProfile,
     postRegister,
     getUserDetail,
-    getFriends
+    getFriends,
+    putUnfriend,
+    getRequestReceive
 }

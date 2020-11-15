@@ -12,6 +12,7 @@ export default class SignUp extends Component {
       inputIsEmpty: false,
       passwordIsPassword2: true,
       isSignUpError: false,
+      isClickOnRegister: false,
     };
   }
   registerHandle = () => {
@@ -28,8 +29,13 @@ export default class SignUp extends Component {
   };
   handleSubmit = async (e) => {
     e.preventDefault();
-    let res = await Service.postRegister(this.state.email, this.state.password);
-    if (res.error) this.setState({ isSignUpError: true });
+    if (!this.state.isSignUpError) {
+      let res = await Service.postRegister(
+        this.state.email,
+        this.state.password
+      );
+      if (res.error) this.setState({ isSignUpError: true });
+    }
   };
   render() {
     return (
@@ -90,7 +96,11 @@ export default class SignUp extends Component {
         ) : (
           ""
         )}
-        {this.state.isSignUpError ? <p>email is registered </p> : ""}
+        {this.state.isSignUpError ? (
+          <p>email is registered </p>
+        ) : (
+          <p>Check your email to active your account</p>
+        )}
       </div>
     );
   }

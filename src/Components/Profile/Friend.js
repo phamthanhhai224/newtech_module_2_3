@@ -7,27 +7,27 @@ class Friend extends Component {
     this.state = {
       friendCount: 0,
       friends: [],
+      componentFriend: [],
     };
   }
   componentDidMount() {
     this.getFriends();
-    console.log(this.state);
   }
   getFriends = async () => {
     let res = await Service.getFriends();
     if (!res.error) {
-      console.log(res.friends);
       this.setState({
         friendCount: res.friends.length,
         friends: res.friends,
       });
     } else this.setState({ friends: [] });
-  };
-  renderFriend = () => {
-    this.state.friends.forEach((friend) => {
-      return <FriendDetail name={friend.name} />;
+    const friendArr = this.state.friends;
+    let frCom = friendArr.map((fr) => {
+      return <FriendDetail key={fr} userId={fr} />;
     });
+    this.setState({ componentFriend: frCom });
   };
+
   render() {
     return (
       <div
@@ -36,7 +36,7 @@ class Friend extends Component {
         role="tabpanel"
         aria-labelledby="pills-friend-tab"
       >
-        <ul className="list-group">{this.renderFriend()}</ul>
+        <ul className="list-group">{this.state.componentFriend}</ul>
       </div>
     );
   }

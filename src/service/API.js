@@ -6,6 +6,7 @@ const GET_USER_PROFILE = API_URL + 'profile'
 const PUT_USER_IMAGE = API_URL + 'profile/upload'
 const GET_USER_DETAIL = API_URL + 'profile/'
 const GET_FRIENDS = API_URL + 'friends'
+const PUT_UNFRIEND = API_URL + 'friends/unfriend'
 export const API_CONST = {
     POST_LOGIN,
     POST_REGISTER,
@@ -13,5 +14,6 @@ export const API_CONST = {
     GET_USER_PROFILE,
     PUT_USER_IMAGE,
     GET_USER_DETAIL,
-    GET_FRIENDS
+    GET_FRIENDS,
+    PUT_UNFRIEND
 }
