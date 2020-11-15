@@ -12,6 +12,10 @@
     "popper.js": "^1.16.1",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",
+<<<<<<< HEAD
+=======
+    "react-bootstrap-validation": "^0.1.11",
+>>>>>>> 57958bbdab1451441337dcc5e176b6e18a390699
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",

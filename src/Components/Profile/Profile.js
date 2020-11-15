@@ -3,6 +3,9 @@ import { Redirect } from "react-router-dom";
 import Detail from "../Detail";
 import ChangePassword from "./ChangePassword";
 import Friend from "./Friend";
+import RequestAndReceive from "./RequestAndReceive";
+import Tabs from 'react-bootstrap/Tabs'
+import Tab from 'react-bootstrap/Tab'
 
 export default class SignUp extends Component {
   constructor(props) {
@@ -27,7 +30,7 @@ export default class SignUp extends Component {
     else
       return (
         <div className="container">
-          <div>
+          {/* <div>
             <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
               <li className="nav-item">
                 <a
@@ -98,7 +101,25 @@ export default class SignUp extends Component {
           </div>
           <div className="btn btn-danger" onClick={this.logOut}>
             Log out
-          </div>
+          </div> */}
+          <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
+            <Tab eventKey="profile" title="profile">
+              <Detail />
+            </Tab>
+            <Tab eventKey="changePassword" title="changePassword">
+              <ChangePassword />
+            </Tab>
+            <Tab eventKey="RequestAndReceive" title="RequestAndReceive" >
+              <RequestAndReceive />
+            </Tab>
+            <Tab eventKey="Friend" title="Friend" >
+              <Friend/>
+            </Tab>
+        </Tabs>
+
+        <div className="btn btn-danger" onClick={this.logOut}>
+            Log out
+          </div> 
         </div>
       );
   }

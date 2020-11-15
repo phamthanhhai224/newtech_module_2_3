@@ -5,6 +5,7 @@ import Register from "./Components/Profile/Register";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Profile from "./Components/Profile/Profile";
 import RequestAndReceive from "./Components/Profile/RequestAndReceive";
+import ForgetPassword from "./Components/ForgetPassword";
 function App() {
   return (
     <BrowserRouter>
@@ -14,6 +15,7 @@ function App() {
         <Route exact path="/sign-in" component={Login} />
         <Route exact path="/sign-up" component={Register} />
         <Route exact path="/profile" component={Profile} />
+        <Route exact path="/forget-password" component={ForgetPassword} />
       </Switch>
     </BrowserRouter>
   );

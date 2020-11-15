@@ -36,3 +36,22 @@
         transform: rotate(360deg);
     }
 }
+.forget-password{
+    margin-top: 30px;
+    background: #FF8A41;
+    box-shadow: 0px 4px 16px rgba(38, 52, 70, 0.12);
+    border-radius: 4px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+    border: none;
+    padding: 15px 24px;
+}
