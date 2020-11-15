@@ -30,12 +30,8 @@ class Friend extends Component {
 
   render() {
     return (
-      <div
-        className="tab-pane fade"
-        id="pills-friend"
-        role="tabpanel"
-        aria-labelledby="pills-friend-tab"
-      >
+      <div>
+        fdsafdsafdsa
         <ul className="list-group">{this.state.componentFriend}</ul>
       </div>
     );
