@@ -4,10 +4,12 @@ import Login from "./Components/Profile/Login";
 import Register from "./Components/Profile/Register";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Profile from "./Components/Profile/Profile";
+import RequestAndReceive from "./Components/Profile/RequestAndReceive";
 function App() {
   return (
     <BrowserRouter>
       <Switch>
+        <Route exact path="/request" component={RequestAndReceive} />
         <Route exact path="/" component={Login} />
         <Route exact path="/sign-in" component={Login} />
         <Route exact path="/sign-up" component={Register} />
