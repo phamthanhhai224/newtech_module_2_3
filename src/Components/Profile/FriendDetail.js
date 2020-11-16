@@ -44,7 +44,7 @@ class FriendDetail extends Component {
           <h4>{this.state.name}</h4>
           <p>{this.state.phone_num}</p>
           <button
-            className="btn btn-danger"
+            className="btn btn-outline-danger"
             onClick={() => {
               this.unfriend(this.props.userId);
             }}

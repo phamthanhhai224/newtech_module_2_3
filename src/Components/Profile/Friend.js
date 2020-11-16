@@ -31,8 +31,7 @@ class Friend extends Component {
   render() {
     return (
       <div>
-        fdsafdsafdsa
-        <ul className="list-group">{this.state.componentFriend}</ul>
+        <ul className="list-group"> {this.state.componentFriend} </ul>{" "}
       </div>
     );
   }

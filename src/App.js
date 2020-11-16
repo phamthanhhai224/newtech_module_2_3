@@ -10,7 +10,6 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/request" component={RequestAndReceive} />
         <Route exact path="/" component={Login} />
         <Route exact path="/sign-in" component={Login} />
         <Route exact path="/sign-up" component={Register} />
