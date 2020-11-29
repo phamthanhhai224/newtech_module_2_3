@@ -14,7 +14,7 @@ function App() {
         <Route exact path="/sign-in" component={Login} />
         <Route exact path="/sign-up" component={Register} />
         <Route exact path="/profile" component={Profile} />
-        <Route exact path="/forget-password" component={ForgetPassword} />
+        <Route exact path="/forgetpassword" component={ForgetPassword} />
       </Switch>
     </BrowserRouter>
   );

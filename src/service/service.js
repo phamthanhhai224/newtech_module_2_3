@@ -1,5 +1,6 @@
 import { API_CONST } from './API'
 const user_token = localStorage.getItem('auth-token') ? localStorage.getItem('auth-token') : null
+
 async function logIn(email, password) {
     let res
     let op = {
@@ -279,4 +280,5 @@ export const Service = {
     putDeleteRequest,
     putDeleteReceive,
     putAcceptRequest
+    
 }

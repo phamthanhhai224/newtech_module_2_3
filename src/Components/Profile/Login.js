@@ -60,10 +60,10 @@ class Login extends Component {
             </div>
             <button className="btn btn-dark btn-lg btn-block"> Sign in </button>{" "}
             <p className="forgot-password text-right">
-              Forgot <Link to={"/forget-password"}> password ? </Link>{" "}
+             <Link to={"/forgetpassword"}> Forgot  password ? </Link>{" "}
             </p>{" "}
             <p className="forgot-password text-right">
-              <Link to={"/sign-up"} className="register-button"> Register </Link>{" "}
+              <Link to={"/signup"} className="register-button"> Register </Link>{" "}
             </p>{" "}
           </form>{" "}
           {this.state.loginError ? (
