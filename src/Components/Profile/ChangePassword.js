@@ -42,7 +42,7 @@ class ChangePassword extends Component {
         {submitted ? (
           <div className="reset-password-form-sent-wrapper">
             <p>Your password has been saved.</p>
-            <Link to="/login" className="ghost-btn">
+            <Link to="/" className="ghost-btn">
               Sign back in
             </Link>
           </div>

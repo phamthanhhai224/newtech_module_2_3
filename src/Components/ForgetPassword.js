@@ -88,7 +88,7 @@ class RecoverPassword extends Component {
               If that account is in our system, we emailed you a link to reset
               your password.
             </p>
-            <Link to="/login" className="ghost-btn">
+            <Link to="/" className="ghost-btn">
               Return to sign in
             </Link>
           </div>
