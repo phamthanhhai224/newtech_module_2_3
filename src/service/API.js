@@ -1,7 +1,7 @@
 const API_URL = 'http://localhost:3000/'
 const POST_LOGIN = API_URL
 const POST_REGISTER = API_URL + 'signup'
-const POST_FORGETPASSWORD = API_URL + 'admin/users/forgetpassword'
+const POST_FORGETPASSWORD = API_URL + '/forgetpassword'
 const POST_UPLOAD_FILE = API_URL + 'profile/upload'
 const GET_USER_PROFILE = API_URL + 'profile'
 const PUT_USER_IMAGE = API_URL + 'profile/upload'
